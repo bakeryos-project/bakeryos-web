@@ -1,46 +1,54 @@
-# Astro Starter Kit: Basics
+# BakeryOS Web
 
-```sh
-npm create astro@latest -- --template basics
+The official BakeryOS landing page. It presents BakeryOS as an Arch Linux based desktop distribution built for a smoother developer experience.
+
+## Requirements
+
+- Node.js `>=22.12.0`
+- pnpm
+
+## Getting Started
+
+Install dependencies from this directory:
+
+```bash
+pnpm install
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Start the local development server:
 
-## 🚀 Project Structure
+```bash
+pnpm dev
+```
 
-Inside of your Astro project, you'll see the following folders and files:
+The site will be available at the local URL printed by Astro, normally `http://localhost:4321`.
+
+## Commands
+
+| Command        | Description                          |
+| -------------- | ------------------------------------ |
+| `pnpm dev`     | Start the Astro development server   |
+| `pnpm build`   | Build the static production site     |
+| `pnpm preview` | Preview the production build locally |
+| `pnpm astro`   | Run the Astro CLI                    |
+
+## Project Structure
 
 ```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+src/
+├── assets/                # Screenshots and branding assets
+├── components/            # Page sections and shared navigation/footer
+├── layouts/               # HTML document layout and metadata
+├── pages/                 # Astro pages
+└── styles/                # Global design system and responsive styles
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Production Build
 
-## 🧞 Commands
+Create the static site with:
 
-All commands are run from the root of the project, from a terminal:
+```bash
+pnpm build
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+The generated site is written to `dist/` and can be deployed to any static hosting provider.

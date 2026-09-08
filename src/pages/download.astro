@@ -1,0 +1,193 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+---
+
+<Layout>
+  <Navbar />
+  <main class="download-page" id="top">
+    <section class="download-simple section-shell">
+      <div class="download-copy">
+        <p class="eyebrow">BakeryOS / Download</p>
+        <h1>Get BakeryOS.<br /><em>Start building.</em></h1>
+        <p class="download-simple-lead">
+          Download the latest BakeryOS ISO and begin with a developer-ready Arch Linux desktop.
+        </p>
+      </div>
+
+      <div class="download-card">
+        <div class="download-card-heading">
+          <h2>BakeryOS ISO</h2>
+        </div>
+        <p>Live image for UEFI and BIOS systems.</p>
+        <a
+          class="button download-primary"
+          href="https://github.com/bakeryos-project/bakeryos-iso/releases"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Download ISO
+        </a>
+        <div class="checksum">
+          <span>SHA-256 checksum</span>
+          <code>Available in the GitHub release assets</code>
+        </div>
+        <a
+          class="release-link"
+          href="https://github.com/bakeryos-project/bakeryos-iso/releases"
+          target="_blank"
+          rel="noreferrer"
+        >
+          View checksums and release notes <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+  </main>
+  <SiteFooter />
+</Layout>
+
+<style>
+  .download-page {
+    min-height: calc(100vh - 176px);
+  }
+  .download-simple {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(420px, 1.05fr);
+    align-items: start;
+    gap: clamp(48px, 7vw, 96px);
+    padding-top: 96px;
+    padding-bottom: 112px;
+  }
+  .download-copy {
+    align-self: center;
+  }
+  .download-card {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .download-simple h1 {
+    margin: 0;
+    font-size: clamp(52px, 6.2vw, 84px);
+    font-weight: 500;
+    letter-spacing: -0.07em;
+    line-height: 0.9;
+  }
+  .download-simple h1 em {
+    color: var(--orange);
+    font-style: italic;
+  }
+  .download-simple-lead {
+    max-width: 410px;
+    margin: 18px 0 0;
+    color: #62645d;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  .download-card {
+    width: min(100%, 560px);
+    justify-self: end;
+    align-self: center;
+    padding: 32px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    background: var(--cream);
+    box-shadow: 14px 16px 0 rgba(184, 200, 173, 0.48);
+  }
+  .download-card-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--line);
+  }
+  .download-card h2 {
+    margin: 0;
+    font-size: 34px;
+    letter-spacing: -0.04em;
+  }
+  .download-arch {
+    color: #777970;
+    font:
+      700 11px 'Trebuchet MS',
+      sans-serif;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .download-card > p {
+    margin: 20px 0 24px;
+    color: #6d7168;
+    font-size: 15px;
+  }
+  .download-primary {
+    background: var(--orange);
+    color: white;
+    transition:
+      transform 0.25s ease,
+      background 0.25s ease;
+  }
+  .download-primary:hover {
+    background: var(--orange-dark);
+    transform: translateY(-3px);
+  }
+  .checksum {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin: 28px 0 20px;
+    padding: 17px;
+    border-radius: var(--radius-sm);
+    background: #ece9df;
+  }
+  .checksum span {
+    color: #777970;
+    font:
+      700 10px 'Trebuchet MS',
+      sans-serif;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .checksum code {
+    color: var(--ink);
+    font:
+      12px 'Courier New',
+      monospace;
+    overflow-wrap: anywhere;
+  }
+  .release-link {
+    color: var(--orange-dark);
+    font:
+      700 11px 'Trebuchet MS',
+      sans-serif;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+  .release-link span {
+    margin-left: 7px;
+    font-size: 15px;
+  }
+  @media (max-width: 800px) {
+    .download-simple {
+      display: block;
+      padding-top: 75px;
+      padding-bottom: 95px;
+    }
+    .download-simple h1 {
+      font-size: clamp(52px, 15vw, 78px);
+    }
+    .download-simple-lead {
+      font-size: 17px;
+    }
+    .download-card {
+      width: 100%;
+      justify-self: auto;
+      padding: 24px;
+    }
+    .download-card-heading {
+      gap: 20px;
+    }
+    .download-card h2 {
+      font-size: 27px;
+    }
+  }
+</style>

@@ -1,1 +1,33 @@
-<nav class="text-3xl font-bold underline">Hello</nav>
+---
+import bakeryosLogo from '../assets/BakeryOS-logo.png';
+---
+
+<div class="site-nav-shell">
+  <nav class="site-nav" aria-label="Primary navigation">
+    <a class="brand" href="/" aria-label="BakeryOS home">
+      <span>Bakery<span class="brand-accent">OS</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/#why-bakeryos">Why BakeryOS</a>
+      <a href="/download">Download</a>
+      <a href="/guides">Documentation</a>
+      <a href="/packages">Packages</a>
+    </div>
+    <div class="nav-actions">
+      <a class="nav-github" href="https://github.com/bakeryos-project" target="_blank" rel="noreferrer">
+        GitHub <span aria-hidden="true">↗</span>
+      </a>
+      <a class="nav-action" href="/download">Get BakeryOS</a>
+    </div>
+  </nav>
+</div>
+
+<script>
+  const navbarShell = document.querySelector('.site-nav-shell');
+
+  if (navbarShell) {
+    const updateNavbar = () => navbarShell.classList.toggle('is-stuck', window.scrollY > 0);
+    window.addEventListener('scroll', updateNavbar, { passive: true });
+    updateNavbar();
+  }
+</script>

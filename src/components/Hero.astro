@@ -1,0 +1,101 @@
+---
+import desktopScreenshot from '../assets/background_1.png';
+import editorScreenshot from '../assets/background_2.png';
+import devWizardScreenshot from '../assets/background_3.png';
+---
+
+<section class="hero section-shell">
+  <div class="hero-copy reveal">
+    <h1>Build more.<br /><em>Develop with ease.</em></h1>
+    <p class="hero-intro">
+      BakeryOS is an Arch Linux based distribution tuned for development. A considered starting point for coding,
+      shipping, and everything in between.
+    </p>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#download">Explore the release <span aria-hidden="true">↗</span></a>
+      <a class="text-link" href="#why-bakeryos">See what is inside <span aria-hidden="true">↓</span></a>
+    </div>
+  </div>
+  <div class="hero-visual reveal reveal-delay" aria-label="BakeryOS desktop preview">
+    <div class="orbit orbit-one"></div>
+    <div class="orbit orbit-two"></div>
+    <div class="desktop-preview">
+      <div class="preview-slides">
+        <img
+          class="preview-slide is-active"
+          src={desktopScreenshot.src}
+          alt="BakeryOS desktop environment showing the About panel"
+          tabindex="0"
+        />
+        <img
+          class="preview-slide"
+          src={editorScreenshot.src}
+          alt="BakeryOS development workspace open in Visual Studio Code"
+          tabindex="0"
+        />
+        <img
+          class="preview-slide"
+          src={devWizardScreenshot.src}
+          alt="BakeryOS development wizard interface"
+          tabindex="0"
+        />
+      </div>
+    </div>
+    <dialog class="preview-modal" aria-label="Expanded BakeryOS screenshot">
+      <button class="preview-modal-close" type="button" aria-label="Close screenshot preview">×</button>
+      <img class="preview-modal-image" src={desktopScreenshot.src} alt="" />
+    </dialog>
+    <div class="floating-chip chip-top"><span>⌁</span> Linux Zen Kernel</div>
+    <div class="floating-chip chip-bottom">
+      <span>✓</span> Dev-ready from boot
+    </div>
+  </div>
+</section>
+
+<script>
+  const preview = document.querySelector('.desktop-preview');
+
+  if (preview) {
+    const slides = [...preview.querySelectorAll<HTMLImageElement>('.preview-slide')];
+    const dots = [...preview.querySelectorAll('.preview-dot')];
+    let activeIndex = 0;
+
+    const showSlide = (index: any) => {
+      activeIndex = (index + slides.length) % slides.length;
+      slides.forEach((slide, slideIndex) => slide.classList.toggle('is-active', slideIndex === activeIndex));
+      dots.forEach((dot, dotIndex) => {
+        dot.classList.toggle('is-active', dotIndex === activeIndex);
+        dot.setAttribute('aria-current', String(dotIndex === activeIndex));
+      });
+    };
+
+    preview.querySelector('.preview-prev')?.addEventListener('click', () => showSlide(activeIndex - 1));
+    preview.querySelector('.preview-next')?.addEventListener('click', () => showSlide(activeIndex + 1));
+    dots.forEach((dot, index) => dot.addEventListener('click', () => showSlide(index)));
+    setInterval(() => showSlide(activeIndex + 1), 5000);
+
+    const modal = document.querySelector<HTMLDialogElement>('.preview-modal');
+    const modalImage = modal?.querySelector<HTMLImageElement>('.preview-modal-image');
+    const closeModal = () => modal?.close();
+
+    slides.forEach((slide) => {
+      const openModal = () => {
+        if (!modal || !modalImage) return;
+        modalImage.src = slide.getAttribute('src') || '';
+        modalImage.alt = slide.getAttribute('alt') || '';
+        modal.showModal();
+      };
+      slide.addEventListener('click', openModal);
+      slide.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openModal();
+        }
+      });
+    });
+    modal?.querySelector('.preview-modal-close')?.addEventListener('click', closeModal);
+    modal?.addEventListener('click', (event) => {
+      if (event.target === modal) closeModal();
+    });
+  }
+</script>

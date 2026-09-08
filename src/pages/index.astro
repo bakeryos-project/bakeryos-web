@@ -1,11 +1,41 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/Navbar.astro";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import PrinciplesTicker from '../components/PrinciplesTicker.astro';
+import FeaturesSection from '../components/FeaturesSection.astro';
+import ToolboxSection from '../components/ToolboxSection.astro';
+import DevWizardSection from '../components/DevWizardSection.astro';
+import WorkflowSection from '../components/WorkflowSection.astro';
+import DownloadSection from '../components/DownloadSection.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 ---
 
 <Layout>
-	<Navbar />
+  <Navbar />
+  <main id="top">
+    <Hero />
+    <FeaturesSection />
+    <ToolboxSection />
+    <DevWizardSection />
+    <WorkflowSection />
+    <DownloadSection />
+  </main>
+  <SiteFooter />
 </Layout>
+
+<script>
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 },
+  );
+
+  document.querySelectorAll('.reveal:not(.hero .reveal)').forEach((element) => revealObserver.observe(element));
+</script>
