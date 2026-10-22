@@ -1,14 +1,26 @@
+
 {
-	"$schema": "./node_modules/wrangler/config-schema.json",
-	"compatibility_date": "2026-09-03",
-	"compatibility_flags": ["global_fetch_strictly_public"],
-	"name": "bakeryos-web",
-	"main": "@astrojs/cloudflare/entrypoints/server",
-	"assets": {
-		"directory": "./dist",
-		"binding": "ASSETS"
-	},
-	"observability": {
-		"enabled": true
-	}
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "bakeryos-web",
+  "compatibility_date": "2026-10-12",
+  "compatibility_flags": [
+    "global_fetch_strictly_public"
+  ],
+  "main": "@astrojs/cloudflare/entrypoints/server",
+  "images": {
+    "binding": "IMAGES"
+  },
+  "kv_namespaces": [
+    {
+      "binding": "SESSION",
+      "id": "YOUR_REAL_KV_NAMESPACE_ID"
+    }
+  ],
+  "assets": {
+    "directory": "./dist",
+    "binding": "bakeryos-web-assets"
+  },
+  "observability": {
+    "enabled": true
+  }
 }

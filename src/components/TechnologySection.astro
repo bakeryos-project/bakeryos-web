@@ -1,0 +1,61 @@
+---
+import {
+    Monitor,
+    Gauge,
+    PackageOpen,
+    Settings,
+    UserGroup,
+    ArrowRight,
+    ArrowUpRight,
+    Download,
+    Plus,
+} from "@lucide/astro";
+import Background3 from "../assets/b-3.png";
+---
+
+<section id="technology" class="bg-gray-950 text-white py-20 md:py-28 px-4">
+    <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="reveal space-y-6">
+                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+                    More Than a
+                    <span class="text-amber-400"> Pretty Desktop.</span>
+                </h2>
+
+                <p class="text-gray-300 text-lg leading-relaxed">
+                    A polished interface is only one part of an operating
+                    system. Behind BakeryOS is a collection of packages, system
+                    configuration, and integration work that brings the entire
+                    experience together.
+                </p>
+
+                <p class="text-gray-400 leading-relaxed">
+                    Built on the Arch Linux ecosystem, the project maintains its
+                    own components while building on the work of the wider
+                    open-source community.
+                </p>
+
+                <a
+                    href="https://github.com/bakeryos-project"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-amber-500 text-gray-950 font-semibold hover:bg-amber-400 transition-colors shimmer-btn"
+                >
+                    Explore the Source
+                    <ArrowUpRight />
+                </a>
+            </div>
+
+            <div class="reveal reveal-delay-1 space-y-4 float">
+                <div class="rounded-2xl overflow-hidden border border-white/10 bg-white/5 pulse-glow">
+                    <img
+                        src={Background3.src}
+                        alt="BakeryOS system and desktop preview"
+                        loading="lazy"
+                        class="w-full h-auto object-cover"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

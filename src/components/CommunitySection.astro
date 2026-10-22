@@ -1,0 +1,49 @@
+---
+import {
+    Monitor,
+    Gauge,
+    PackageOpen,
+    Settings,
+    UserGroup,
+    ArrowRight,
+    ArrowUpRight,
+    Download,
+    Plus,
+} from "@lucide/astro";
+---
+
+<section id="community" class="max-w-6xl mx-auto px-4 py-20 md:py-28">
+    <div class="rounded-3xl bg-amber-50 border border-amber-100 p-8 sm:p-12 lg:p-16">
+        <div class="reveal max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl sm:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight mb-6">
+                Made in the Open.
+                <span class="text-amber-700">Built Together.</span>
+            </h2>
+
+            <p class="text-gray-600 text-lg leading-relaxed mb-9">
+                BakeryOS builds on the work of the open-source community and
+                develops its own components in the open. Explore the code,
+                follow development, report issues, and help improve the project.
+            </p>
+
+            <div class="reveal reveal-delay-1 flex flex-col sm:flex-row justify-center gap-4">
+                <a
+                    href="https://github.com/bakeryos-project"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex justify-center items-center gap-2 px-7 py-3.5 rounded-full bg-gray-900 text-white font-semibold hover:bg-gray-800 transition-colors shimmer-btn"
+                >
+                    View on GitHub
+                    <ArrowUpRight />
+                </a>
+
+                <a
+                    href="/guides"
+                    class="inline-flex justify-center items-center px-7 py-3.5 rounded-full bg-white border border-amber-200 text-gray-800 font-semibold hover:border-amber-400 transition-colors shimmer-btn"
+                >
+                    Read the Documentation
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

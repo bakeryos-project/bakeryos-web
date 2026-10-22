@@ -1,0 +1,104 @@
+---
+import {
+    Monitor,
+    Gauge,
+    PackageOpen,
+    Settings,
+    UserGroup,
+    ArrowRight,
+    ArrowUpRight,
+    Download,
+    Plus,
+} from "@lucide/astro";
+---
+
+<section
+    id="faq"
+    class="bg-amber-50/40 border-y border-amber-100/60 px-4 py-20 md:py-28"
+>
+    <div class="max-w-3xl mx-auto">
+        <div class="reveal text-center mb-12">
+            <h2 class="text-3xl sm:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">
+                A Few Things to Know.
+            </h2>
+
+            <p class="text-gray-600 text-lg">
+                The practical details, without the mysterious Linux rituals.
+            </p>
+        </div>
+
+        <div class="space-y-4">
+            <details class="reveal reveal-delay-1 group rounded-xl bg-white border border-amber-100 p-5 sm:p-6">
+                <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-gray-900">
+                    What is BakeryOS?
+                    <Plus />
+                </summary>
+                <p class="mt-4 text-gray-600 leading-relaxed">
+                    BakeryOS is an Arch-based Linux distribution focused on a
+                    customized GNOME desktop, project-maintained packages, and
+                    an integrated desktop experience.
+                </p>
+            </details>
+
+            <details class="reveal reveal-delay-2 group rounded-xl bg-white border border-amber-100 p-5 sm:p-6">
+                <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-gray-900">
+                    Is BakeryOS based on Arch Linux?
+                    <Plus />
+                </summary>
+                <p class="mt-4 text-gray-600 leading-relaxed">
+                    Yes. BakeryOS builds on the Arch Linux ecosystem and adds
+                    its own packages, desktop configuration, and system
+                    integration.
+                </p>
+            </details>
+
+            <details class="reveal reveal-delay-3 group rounded-xl bg-white border border-amber-100 p-5 sm:p-6">
+                <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-gray-900">
+                    Who is BakeryOS for?
+                    <Plus />
+                </summary>
+                <p class="mt-4 text-gray-600 leading-relaxed">
+                    BakeryOS is for people interested in a customized Linux
+                    desktop, from everyday users willing to learn Linux to
+                    developers who value flexibility and control.
+                </p>
+            </details>
+
+            <details class="reveal reveal-delay-4 group rounded-xl bg-white border border-amber-100 p-5 sm:p-6">
+                <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-gray-900">
+                    Is BakeryOS free and open source?
+                    <Plus />
+                </summary>
+                <p class="mt-4 text-gray-600 leading-relaxed">
+                    Review the licenses published with the project and its
+                    individual components for the applicable terms of use,
+                    modification, and redistribution.
+                </p>
+            </details>
+
+            <details class="reveal reveal-delay-5 group rounded-xl bg-white border border-amber-100 p-5 sm:p-6">
+                <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-gray-900">
+                    How do I install BakeryOS?
+                    <Plus />
+                </summary>
+                <p class="mt-4 text-gray-600 leading-relaxed">
+                    Visit the download page to find an available release, then
+                    follow the installation documentation. Back up your files
+                    before making disk or partition changes.
+                </p>
+            </details>
+
+            <details class="reveal reveal-delay-6 group rounded-xl bg-white border border-amber-100 p-5 sm:p-6">
+                <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-gray-900">
+                    Where can I report a bug or contribute?
+                    <Plus />
+                </summary>
+                <p class="mt-4 text-gray-600 leading-relaxed">
+                    Visit the BakeryOS project repository to explore the source
+                    code, review existing issues, and find the appropriate place
+                    to contribute.
+                </p>
+            </details>
+        </div>
+    </div>
+</section>

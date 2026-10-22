@@ -1,41 +1,72 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import Hero from '../components/Hero.astro';
-import PrinciplesTicker from '../components/PrinciplesTicker.astro';
-import FeaturesSection from '../components/FeaturesSection.astro';
-import ToolboxSection from '../components/ToolboxSection.astro';
-import DevWizardSection from '../components/DevWizardSection.astro';
-import WorkflowSection from '../components/WorkflowSection.astro';
-import DownloadSection from '../components/DownloadSection.astro';
-import SiteFooter from '../components/SiteFooter.astro';
+import Navbar from "../components/Navbar.astro";
+import Layout from "../layouts/Layout.astro";
+import Background1 from "../assets/b-1.png";
+import Background2 from "../assets/b-2.png";
+import Background3 from "../assets/b-3.png";
+import {
+    Monitor,
+    Gauge,
+    PackageOpen,
+    Settings,
+    UserGroup,
+    ArrowRight,
+    ArrowUpRight,
+    Download,
+    Plus,
+} from "@lucide/astro";
+import HeroSection from "../components/HeroSection.astro";
+import FeaturesSection from "../components/FeaturesSection.astro";
+import ExperienceSection from "../components/ExperienceSection.astro";
+import TechnologySection from "../components/TechnologySection.astro";
+import CommunitySection from "../components/CommunitySection.astro";
+import GettingStartedSection from "../components/GettingStartedSection.astro";
+import FAQ from "../components/FAQ.astro";
 ---
 
 <Layout>
-  <Navbar />
-  <main id="top">
-    <Hero />
+    <Navbar />
+    <HeroSection />
     <FeaturesSection />
-    <ToolboxSection />
-    <DevWizardSection />
-    <WorkflowSection />
-    <DownloadSection />
-  </main>
-  <SiteFooter />
+    <ExperienceSection />
+    <!-- <TechnologySection /> -->
+    <CommunitySection />
+    <GettingStartedSection />
+    <FAQ />
+
+    <section class="px-4 py-20 md:py-28">
+        <div class="max-w-5xl mx-auto relative overflow-hidden rounded-3xl bg-gray-950 px-6 py-16 sm:px-12 sm:py-20 text-center">
+            <div class="absolute -top-24 -left-20 w-72 h-72 rounded-full bg-amber-500/20 blur-3xl"></div>
+            <div class="absolute -bottom-24 -right-20 w-72 h-72 rounded-full bg-orange-500/20 blur-3xl"></div>
+
+            <div class="reveal relative max-w-2xl mx-auto">
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight mb-6">
+                    Your Desktop.
+                    <br />
+                    <span class="text-amber-400">A Different Perspective.</span>
+                </h2>
+
+                <p class="reveal reveal-delay-1 text-gray-300 text-lg leading-relaxed mb-9">
+                    Explore an independently crafted Linux desktop built around
+                    flexibility, thoughtful design, and open-source technology.
+                </p>
+
+                <div class="reveal reveal-delay-2 flex flex-col sm:flex-row justify-center gap-4">
+                    <a
+                        href="/download"
+                        class="inline-flex justify-center items-center px-8 py-3.5 rounded-full bg-linear-to-r from-amber-500 to-orange-500 text-gray-950 font-bold hover:scale-[1.02] transition-transform shimmer-btn"
+                    >
+                        Get BakeryOS
+                    </a>
+
+                    <a
+                        href="https://github.com/bakeryos-project"
+                        class="inline-flex justify-center items-center px-8 py-3.5 rounded-full border border-white/20 text-white font-semibold hover:bg-white/10 transition-colors shimmer-btn"
+                    >
+                        Explore the Project
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 </Layout>
-
-<script>
-  const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12 },
-  );
-
-  document.querySelectorAll('.reveal:not(.hero .reveal)').forEach((element) => revealObserver.observe(element));
-</script>

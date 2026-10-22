@@ -1,33 +1,50 @@
----
-import bakeryosLogo from '../assets/BakeryOS-logo.png';
----
-
-<div class="site-nav-shell">
-  <nav class="site-nav" aria-label="Primary navigation">
-    <a class="brand" href="/" aria-label="BakeryOS home">
-      <span>Bakery<span class="brand-accent">OS</span></span>
-    </a>
-    <div class="nav-links">
-      <a href="/#why-bakeryos">Why BakeryOS</a>
-      <a href="/download">Download</a>
-      <a href="/guides">Documentation</a>
-      <a href="/packages">Packages</a>
+<nav
+    class="flex items-center justify-between px-6 py-3 bg-white/80 backdrop-blur-md shadow-sm border-b border-amber-100 sticky top-0 z-50 transition-all duration-300"
+    id="main-navbar"
+>
+    <div class="flex items-center gap-2 cursor-pointer">
+        <h2 class="text-xl font-bold bg-linear-to-r from-amber-700 to-orange-600 bg-clip-text text-transparent">
+            BakeryOS
+        </h2>
     </div>
-    <div class="nav-actions">
-      <a class="nav-github" href="https://github.com/bakeryos-project" target="_blank" rel="noreferrer">
-        GitHub <span aria-hidden="true">↗</span>
-      </a>
-      <a class="nav-action" href="/download">Get BakeryOS</a>
-    </div>
-  </nav>
-</div>
 
+    <div>
+        <ul class="flex items-center gap-2 md:gap-4 ml-auto font-medium text-gray-700">
+            <li>
+                <a
+                    href="/"
+                    class="px-4 py-2 rounded-full transition-all duration-200 ease-in-out hover:bg-amber-50 hover:text-amber-700 block"
+                >
+                    Home
+                </a>
+            </li>
+            <li>
+                <a
+                    href="/download"
+                    class="px-4 py-2 rounded-full transition-all duration-200 ease-in-out hover:bg-amber-50 hover:text-amber-700 block"
+                >
+                    Download
+                </a>
+            </li>
+            <li>
+                <a
+                    href="/guides"
+                    class="px-4 py-2 rounded-full transition-all duration-200 ease-in-out hover:bg-amber-50 hover:text-amber-700 block"
+                >
+                    Guides
+                </a>
+            </li>
+            <li>
+                <a
+                    href="/about"
+                    class="px-4 py-2 rounded-full transition-all duration-200 ease-in-out hover:bg-amber-50 hover:text-amber-700 block"
+                >
+                    About Us
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
 <script>
-  const navbarShell = document.querySelector('.site-nav-shell');
-
-  if (navbarShell) {
-    const updateNavbar = () => navbarShell.classList.toggle('is-stuck', window.scrollY > 0);
-    window.addEventListener('scroll', updateNavbar, { passive: true });
-    updateNavbar();
-  }
+    const mainNavbar = document.getElementById("main-navbar");
 </script>

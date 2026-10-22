@@ -1,28 +1,117 @@
-<section class="content-section section-shell" id="why-bakeryos">
-  <div class="section-heading reveal">
-    <p class="eyebrow">A better baseline</p><h2>
-      All the freedom of Arch.<br /><span>None of the blank canvas.</span>
-    </h2>
-  </div>
-  <div class="feature-grid">
-    <article class="feature-card feature-card-large reveal">
-      <span class="feature-number">01</span>
-      <h3>Ready for real work</h3><p>
-        Start with a clean, intentional desktop and the foundations developers actually need. Spend your first hour
-        building, not hunting through setup guides.
-      </p><a href="#toolbox" class="card-link">See the foundation <span>↗</span></a>
-    </article>
-    <article class="feature-card reveal reveal-delay">
-      <span class="feature-number">02</span>
-      <h3>Quick by design</h3><p>
-        A lean system keeps your machine responsive, your builds moving, and your attention where it belongs.
-      </p>
-    </article>
-    <article class="feature-card reveal reveal-delay-2">
-      <span class="feature-number">03</span>
-      <h3>Yours to shape</h3><p>
-        Arch underneath means transparent packages, current software, and the freedom to make the system truly yours.
-      </p>
-    </article>
-  </div>
+---
+import {
+    Monitor,
+    Gauge,
+    PackageOpen,
+    Settings,
+    UserGroup,
+    ArrowRight,
+    ArrowUpRight,
+    Download,
+    Plus,
+} from "@lucide/astro";
+---
+
+<section
+    id="features"
+    class="px-4 py-20 md:py-28 bg-amber-50/40 border-y border-amber-100/60"
+>
+    <div class="max-w-6xl mx-auto">
+        <div class="max-w-2xl mx-auto text-center mb-16 reveal reveal-delay-1">
+            <h2 class="text-3xl sm:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight mb-5">
+                Thoughtfully Built.
+                <br />
+                <span class="text-amber-700">Made for Everyday Use.</span>
+            </h2>
+            <p class="text-gray-600 text-lg leading-relaxed">
+                An operating system is more than its desktop. It's the
+                collection of details that makes everything work together.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <article class="reveal reveal-delay-2 p-7 rounded-2xl bg-white border border-amber-100 hover:border-amber-300 hover:shadow-lg hover:shadow-amber-900/5 hover:-translate-y-1 transition-all duration-300">
+                <div class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center text-amber-800 text-xl mb-6 float">
+                    <Monitor />
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">
+                    A Cohesive Desktop
+                </h3>
+                <p class="text-gray-600 leading-relaxed">
+                    A customized GNOME environment with a consistent visual
+                    identity, carefully selected components, and a desktop
+                    experience designed to work as a whole.
+                </p>
+            </article>
+
+            <article class="reveal reveal-delay-3 p-7 rounded-2xl bg-white border border-amber-100 hover:border-amber-300 hover:shadow-lg hover:shadow-amber-900/5 hover:-translate-y-1 transition-all duration-300">
+                <div class="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center text-orange-800 text-xl mb-6 float">
+                    <span>⌘</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">
+                    The Arch Ecosystem
+                </h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Built on Arch Linux, BakeryOS embraces a flexible software
+                    ecosystem and a rolling-release approach to keeping the
+                    system up to date.
+                </p>
+            </article>
+
+            <article class="reveal reveal-delay-4 p-7 rounded-2xl bg-white border border-amber-100 hover:border-amber-300 hover:shadow-lg hover:shadow-amber-900/5 hover:-translate-y-1 transition-all duration-300">
+                <div class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center text-amber-800 text-xl mb-6 float">
+                    <Gauge />
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">
+                    Your Workflow, Your Way
+                </h3>
+                <p class="text-gray-600 leading-relaxed">
+                    From everyday tasks to development workflows, BakeryOS
+                    provides a Linux environment you can adapt to your needs
+                    instead of working around unnecessary limitations.
+                </p>
+            </article>
+
+            <article class="reveal reveal-delay-5 p-7 rounded-2xl bg-white border border-amber-100 hover:border-amber-300 hover:shadow-lg hover:shadow-amber-900/5 hover:-translate-y-1 transition-all duration-300">
+                <div class="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center text-orange-800 text-xl mb-6 float">
+                    <Settings />
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">
+                    Integrated System Tools
+                </h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Project-maintained packages and system components bring the
+                    desktop, installation experience, and supporting utilities
+                    together.
+                </p>
+            </article>
+
+            <article class="reveal reveal-delay-6 p-7 rounded-2xl bg-white border border-amber-100 hover:border-amber-300 hover:shadow-lg hover:shadow-amber-900/5 hover:-translate-y-1 transition-all duration-300">
+                <div class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center text-amber-800 text-xl mb-6 float">
+                    <PackageOpen />
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">
+                    An Open Foundation
+                </h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Explore the source, understand how the system is assembled,
+                    and build on the open-source technologies behind your
+                    desktop.
+                </p>
+            </article>
+
+            <article class="reveal reveal-delay-1 p-7 rounded-2xl bg-white border border-amber-100 hover:border-amber-300 hover:shadow-lg hover:shadow-amber-900/5 hover:-translate-y-1 transition-all duration-300">
+                <div class="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center text-orange-800 text-xl mb-6 float">
+                    <UserGroup />
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">
+                    Built as a Project
+                </h3>
+                <p class="text-gray-600 leading-relaxed">
+                    BakeryOS is developed as an independent project, with its
+                    own packages, design decisions, and development process.
+                </p>
+            </article>
+        </div>
+    </div>
 </section>
